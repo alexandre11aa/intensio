@@ -1,7 +1,10 @@
-print("Porque para mim o viver é Cristo, e o morrer é ganho. Filipenses 1:21")
+print("\nPorque para mim o viver é Cristo, e o morrer é ganho. Filipenses 1:21\n")
 
 import tkinter as tk
+import pandas as pd
+import numpy as np
 import base64
+import sys
 import os
 
 from tkinter import *
@@ -31,9 +34,6 @@ from metodos_complementares import precipitacoes_maximas
 from salvando_dados import relatorio_de_equacao_idf
 from salvando_dados import relatorio_de_precipitacoes_maximas
 from salvando_dados import compilacao_do_banco_de_dados
-
-import pandas as pd
-import numpy as np
 
 root = Tk()
 
@@ -1204,8 +1204,10 @@ class funcoes():
 
     # Opção Sair
     def sair(self):
-        print("\nSaindo do programa...")
-        quit()
+        print("\nEm verdade que não convém gloriar-me; mas passarei às visões e revelações do Senhor. 2 Coríntios 12:1\n")
+
+        self.root.destroy()
+        sys.exit()
 
     # Opção de Configurações
     def configuracoes(self):
@@ -1657,6 +1659,8 @@ class programa(funcoes):
         self.root.resizable(False, False)
         self.root.maxsize(width=1920, height=1080)
         self.root.minsize(width=750, height=500)
+
+        self.root.protocol("WM_DELETE_WINDOW", self.sair)
 
         self.conversao_de_icone(self.root)
 
