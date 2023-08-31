@@ -14,7 +14,7 @@ def relatorio_de_equacao_idf(arquivo_salvo, resultados, parametros_da_distribuic
         arquivo.write(f'Após agrupar as amostras de precipitações diárias                                          \n')
         arquivo.write(f'anuais máximas dos {resultados[3]} anos de séries históricas, foi                          \n')
         arquivo.write(f'realizado para esses dados o teste de tendência de                                         \n')
-        arquivo.write(f'Mann-Kendall, constatando através dele que {resultados[0]}.                                \n')
+        arquivo.write(f'Mann-Kendall, constatando através dele que "{resultados[0]}".                              \n')
         arquivo.write(f'Após isso iniciou-se a modelagem dos dados utilizando a                                    \n')
         arquivo.write(f'distribuição probabilísticas "{resultados[10]}", com seus parâmetros                       \n')    
         arquivo.write(f'{parametros_da_distribuicao} encontrados                                                   \n')
