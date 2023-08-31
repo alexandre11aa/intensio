@@ -25,7 +25,7 @@ def relatorio_de_equacao_idf(arquivo_salvo, resultados, parametros_da_distribuic
         arquivo.write(f'Iniciou-se então o uso do método de otimização "{resultados[11]}",                         \n')
         arquivo.write(f'que resultou nos parâmetros da equação das chuvas intensas                                 \n')
         arquivo.write(f'que foram: "a = {resultados[4]}", "b = {resultados[5]}", "c = {resultados[6]}" e           \n')
-        arquivo.write(f'"d = {resultados[7]}" . Por fim, foram feitos testes de acurácia de Nash-                  \n')
+        arquivo.write(f'"d = {resultados[7]}" . Por fim, foram feitos os testes de acurácia de Nash-               \n')
         arquivo.write(f'Sutcliff com coeficiente igual a {resultados[8]:.4f}, e RMSE (Root Mean                    \n')
         arquivo.write(f'Squared Error) com coeficiente igual a {resultados[9]:.4f}.                              \n\n')
         arquivo.write(f'-----------------------------------------------------------------------------------------  \n')
