@@ -668,6 +668,8 @@ class funcoes():
         self.fundo_de_configuracoes = Label(self.janelas_extras, text='', relief="raised", bg='#F0F0F0', fg='#800000')
         self.fundo_de_configuracoes.place(relx=0.02, rely=0.01, relwidth=0.960, relheight=0.980)
 
+        self.conversao_de_icone(self.janelas_extras)
+
         # 1.1 Fundo de Configurações:
 
         self.fundo_de_configuracoes_2 = Label(self.janelas_extras, text='', relief="groove", bg='#F0F0F0', fg='#800000')
@@ -897,6 +899,8 @@ class funcoes():
 
             self.fundo_de_configuracoes = Label(self.janelas_extras, text='', relief="raised", bg='#F0F0F0', fg='#800000')
             self.fundo_de_configuracoes.place(relx=0.03, rely=0.03, relwidth=0.940, relheight=0.940)
+
+            self.conversao_de_icone(self.janelas_extras)
 
             # 1.1 Fundo de Configurações:
 
