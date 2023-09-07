@@ -275,7 +275,6 @@ class funcoes():
 
         self.quadro_4_itens, self.quadro_5_itens = precipitacoes_maximas(self.quadro_4_itens, 
                                                                          self.quadro_5_itens)
-        
         (anos_falhos, 
         self.relatorio_2_variaveis[0], 
         self.relatorio_2_variaveis[1]) = limiar_de_falhas(self.quadro_5_itens, self.limiar_de_erro)
@@ -283,7 +282,7 @@ class funcoes():
         for i in range(len(anos_falhos)):
             for j in range(len(self.quadro_4_itens)):
                 if anos_falhos[i] == self.quadro_4_itens[j][0]:
-                    del self.quadro_4_itens[j]
+                    self.quadro_4_itens[j][1] = np.nan
 
         self.relatorio_2_variaveis[2] = '%.4f' % (int(self.limiar_de_erro) / self.relatorio_2_variaveis[0])
 
@@ -419,7 +418,12 @@ class funcoes():
 
     # Botão de Exportar
     def exportando(self):
-        self.quadro_1_itens = self.quadro_4_itens
+
+        self.quadro_1_itens = []
+
+        for i in range(len(self.quadro_4_itens)):
+            if not np.isnan(self.quadro_4_itens[i][1]):
+                self.quadro_1_itens.append(self.quadro_4_itens[i])
 
         self.funcao_destruicao_2()
 
