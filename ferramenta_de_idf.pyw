@@ -82,7 +82,6 @@ class funcoes():
         # Nulo
 
         else:
-
             self.ano_inicial_da_cidade               = ''
             self.ano_final_da_cidade                 = ''
             self.coordenada_apurada_x                = ''
@@ -93,7 +92,6 @@ class funcoes():
         self.funcao_destruicao_1() 
 
     def idf_das_cidades_paraibanas(self):
-
         self.interpolar_valores = False
 
         # Equações de Chuvas Intensas das Cidades que Possuem Dados
@@ -132,8 +130,7 @@ class funcoes():
 
         self.funcao_destruicao_1()                  
             
-    def idf_do_usuario(self):
-            
+    def idf_do_usuario(self):     
         self.dados_da_aba_2 = self.calculando_3(self.quadro_1_itens)
 
         for i in range(4):
@@ -418,7 +415,6 @@ class funcoes():
 
     # Botão de Exportar
     def exportando(self):
-
         self.quadro_1_itens = []
 
         for i in range(len(self.quadro_4_itens)):
@@ -534,7 +530,6 @@ class funcoes():
         self.aba_3_funcoes_destrutivas()
 
     def funcao_destruicao_4(self):
-
         dados = self.lista_de_cidades_bdd.get()
 
         self.janelas_extras.destroy()
@@ -545,19 +540,16 @@ class funcoes():
 
     # Botões de Salvar
     def salvando_1(self):
-
         arquivo_salvo = asksaveasfilename(defaultextension=".txt", filetypes=[('Arquivo de texto UTF-8', '*.txt')])
         
         relatorio_de_equacao_idf(arquivo_salvo, self.relatorio_1_variaveis, self.variaveis_da_distribuicao, self.quadro_2_itens, self.quadro_3_itens)
 
     def salvando_2(self):
-
         arquivo_salvo = asksaveasfilename(defaultextension=".txt", filetypes=[('Arquivo de texto UTF-8', '*.txt')])
 
         relatorio_de_precipitacoes_maximas(arquivo_salvo, self.relatorio_2_variaveis, self.quadro_4_itens)
 
     def salvando_3(self):
-
         arquivo_salvo = asksaveasfilename(defaultextension=".csv", filetypes=[('CSV', '*.csv'), ('Arquivo de texto UTF-8', '*.txt')])
 
         compilacao_do_banco_de_dados(arquivo_salvo, self.quadro_bdd_itens)
@@ -577,7 +569,6 @@ class funcoes():
         self.funcao_destruicao_2()
 
     def inserindo_2(self):
-
         if self.n_coeficientes_de_desagregacao == 0:
             if str(self.digitar_duracao.get()) != "":
                 self.quadro_2_itens.append((int(self.digitar_duracao.get())))
