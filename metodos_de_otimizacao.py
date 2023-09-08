@@ -220,8 +220,15 @@ def idf_otimizar(fdp_precipitacoes_iniciais,
         erroTotQ = 0
 
         for i in range(1, len(tempos_de_retorno) + 1):
-            erroTotQ += numpy.sum((matriz[i - 1] - res[i,:]) ** 2)
-        
+
+            erroTotQ += numpy.sum((matriz[i - 1] - res[i,:]) ** 2) # RMSE
+
+            #erroTotQ += numpy.sum(numpy.abs(matriz[i - 1] - res[i,:])) # MAE
+
+            #erroTotQ += numpy.sqrt(numpy.mean((matriz[i - 1] - res[i,:]) ** 2)) / (numpy.max(res[i,:]) - numpy.min(res[i,:])) # NRMSE
+
+            #erroTotQ += 100 * numpy.mean(numpy.abs((matriz[i - 1] - res[i,:]) / res[i,:])) # MAPE
+            
         return erroTotQ
     
     dados_para_iteracao = [duracoes]
