@@ -82,6 +82,7 @@ class funcoes():
         # Nulo
 
         else:
+
             self.ano_inicial_da_cidade               = ''
             self.ano_final_da_cidade                 = ''
             self.coordenada_apurada_x                = ''
@@ -92,6 +93,7 @@ class funcoes():
         self.funcao_destruicao_1() 
 
     def idf_das_cidades_paraibanas(self):
+
         self.interpolar_valores = False
 
         # Equações de Chuvas Intensas das Cidades que Possuem Dados
@@ -130,7 +132,8 @@ class funcoes():
 
         self.funcao_destruicao_1()                  
             
-    def idf_do_usuario(self):     
+    def idf_do_usuario(self):
+            
         self.dados_da_aba_2 = self.calculando_3(self.quadro_1_itens)
 
         for i in range(4):
@@ -273,8 +276,8 @@ class funcoes():
         self.quadro_4_itens, self.quadro_5_itens = precipitacoes_maximas(self.quadro_4_itens, 
                                                                          self.quadro_5_itens)
         (anos_falhos, 
-        self.relatorio_2_variaveis[0], 
-        self.relatorio_2_variaveis[1]) = limiar_de_falhas(self.quadro_5_itens, self.limiar_de_erro)
+         self.relatorio_2_variaveis[0], 
+         self.relatorio_2_variaveis[1]) = limiar_de_falhas(self.quadro_5_itens, self.limiar_de_erro)
 
         for i in range(len(anos_falhos)):
             for j in range(len(self.quadro_4_itens)):
@@ -283,7 +286,7 @@ class funcoes():
 
         self.relatorio_2_variaveis[2] = '%.4f' % (int(self.limiar_de_erro) / self.relatorio_2_variaveis[0])
 
-        self.relatorio_2_variaveis[3] = '%.4f' % (self.relatorio_2_variaveis[1] / self.relatorio_2_variaveis[0])
+        self.relatorio_2_variaveis[3] = '%.4f' % (sum(self.relatorio_2_variaveis[1]) / self.relatorio_2_variaveis[0])
 
         self.funcao_destruicao_3()
 
@@ -415,6 +418,7 @@ class funcoes():
 
     # Botão de Exportar
     def exportando(self):
+
         self.quadro_1_itens = []
 
         for i in range(len(self.quadro_4_itens)):
@@ -530,6 +534,7 @@ class funcoes():
         self.aba_3_funcoes_destrutivas()
 
     def funcao_destruicao_4(self):
+
         dados = self.lista_de_cidades_bdd.get()
 
         self.janelas_extras.destroy()
@@ -540,16 +545,19 @@ class funcoes():
 
     # Botões de Salvar
     def salvando_1(self):
+
         arquivo_salvo = asksaveasfilename(defaultextension=".txt", filetypes=[('Arquivo de texto UTF-8', '*.txt')])
         
         relatorio_de_equacao_idf(arquivo_salvo, self.relatorio_1_variaveis, self.variaveis_da_distribuicao, self.quadro_2_itens, self.quadro_3_itens)
 
     def salvando_2(self):
+
         arquivo_salvo = asksaveasfilename(defaultextension=".txt", filetypes=[('Arquivo de texto UTF-8', '*.txt')])
 
         relatorio_de_precipitacoes_maximas(arquivo_salvo, self.relatorio_2_variaveis, self.quadro_4_itens)
 
     def salvando_3(self):
+
         arquivo_salvo = asksaveasfilename(defaultextension=".csv", filetypes=[('CSV', '*.csv'), ('Arquivo de texto UTF-8', '*.txt')])
 
         compilacao_do_banco_de_dados(arquivo_salvo, self.quadro_bdd_itens)
@@ -569,6 +577,7 @@ class funcoes():
         self.funcao_destruicao_2()
 
     def inserindo_2(self):
+
         if self.n_coeficientes_de_desagregacao == 0:
             if str(self.digitar_duracao.get()) != "":
                 self.quadro_2_itens.append((int(self.digitar_duracao.get())))
@@ -918,7 +927,7 @@ class funcoes():
             self.relatorio_dias_falhos_texto = Label(self.janelas_extras, text='Dias Falhos :', bg='#F0F0F0', fg='#000000')
             self.relatorio_dias_falhos_texto.place(relx=0.51, rely=0.2, relwidth=0.35, relheight=0.1)
 
-            self.relatorio_dias_falhos = Label(self.janelas_extras, text=self.relatorio_2_variaveis[1], relief="sunken", bg='#FFFFFF', fg='#000000')
+            self.relatorio_dias_falhos = Label(self.janelas_extras, text=sum(self.relatorio_2_variaveis[1]), relief="sunken", bg='#FFFFFF', fg='#000000')
             self.relatorio_dias_falhos.place(relx=0.51, rely=0.29, relwidth=0.41, relheight=0.12)
 
             # 1.4 Limiar de Falhas
@@ -1000,7 +1009,6 @@ class funcoes():
         # Adicionando Imagem à Janela na Tela
 
         self.informacoes = tk.PhotoImage(data=imagens_de_ferramenta(img))
-
         self.my_canvas.create_image(1, 1, image=self.informacoes, anchor=tk.NW)
 
     def estudo(self):
