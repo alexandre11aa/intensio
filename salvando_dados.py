@@ -31,6 +31,8 @@ def relatorio_de_equacao_idf(arquivo_salvo, resultados, parametros_da_distribuic
         arquivo.write(f'-----------------------------------------------------------------------------------------  \n')
         arquivo.write(f'> INTENSIDADES:                                                                          \n\n')
 
+        tre.sort()
+
         tre = [str(num) for num in tre]
 
         intensidades = (('|\t|' + (int(len(tre) / 2) * '\t') + 'Tr' + (round(len(tre) / 2) * '\t') + '|\n') + 
@@ -61,23 +63,24 @@ def relatorio_de_precipitacoes_maximas(arquivo_salvo, resultados, precipitacoes)
         arquivo.write(f'> RELATÓRIO:                                                                             \n\n')
         arquivo.write(f'Foram analisados pelo menos {resultados[0]}                                                \n')
         arquivo.write(f'dias. Foi observado que destes,                                                            \n') 
-        arquivo.write(f'{resultados[1]} não possuiam dados, que                                                    \n')
+        arquivo.write(f'{sum(resultados[1])} não possuiam dados, que                                               \n')
         arquivo.write(f'representa {resultados[3]}% da quantidade                                                  \n')
         arquivo.write(f'total de dias. O limiar de falhas                                                          \n')
-        arquivo.write(f'definido foi de {resultados[2]}%, podendo                                                  \n')
-        arquivo.write(f'haver pelo menos {int(float(resultados[2]) * float(resultados[0]))} dias falhos            \n')
-        arquivo.write(f'sem que haja o comprometimento da                                                          \n')        
-        arquivo.write(f'informação que se busca, que é o                                                           \n')
-        arquivo.write(f'da maior precipitação pluviométrica                                                        \n')
-        arquivo.write(f'do ano em um dia.                                                                        \n\n')
+        arquivo.write(f'definido para os dados de um ano,                                                          \n')
+        arquivo.write(f'ou seja, a porcentagem de dias falhos                                                      \n')
+        arquivo.write(f'total que um ano pode ter é de {resultados[2]}%,                                           \n')
+        arquivo.write(f'podendo haver pelo menos {int(float(resultados[2]) * float(resultados[0]))} dias           \n')
+        arquivo.write(f'falhos sem que haja o comprometimento                                                      \n')        
+        arquivo.write(f'da precipitação diária máxima do ano                                                       \n')
+        arquivo.write(f'em questão.                                                                              \n\n')
         arquivo.write(f'-----------------------------------------------------------------------------------------\n\n')
         arquivo.write(f'> PRECIPITAÇÕES MÁXIMAS:                                                                 \n\n')
-        arquivo.write('|Nº\t|Prec.\t|                                                                              \n')
+        arquivo.write('|Nº\t|Prec\t|Dias F\t|                                                                      \n')
 
         for i in range(len(precipitacoes)):
-            arquivo.write(f'|{precipitacoes[i][0]}\t|{precipitacoes[i][1]}\t|                                      \n')
+            arquivo.write(f'|{precipitacoes[i][0]}\t|{precipitacoes[i][1]}\t|{resultados[1][i]}\t|                 \n')
 
-        arquivo.write(f'\n-----------------------------------------------------------------------------------------  ')
+        arquivo.write(f'\n---------------------------------------------------------------------------------------\n\n')
 
 def compilacao_do_banco_de_dados(arquivo_salvo, dados):
 
