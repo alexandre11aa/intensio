@@ -275,7 +275,7 @@ def limiar_de_falhas(lista_1, limiar):
 
     anos_falhos = []
 
-    dias_falhos = 0
+    dias_falhos = []
 
     for i in range(len(lista_1)):
         anos.append(lista_1[i][0])
@@ -337,7 +337,7 @@ def limiar_de_falhas(lista_1, limiar):
 
         dias_totais = len(anos) * 365
 
-        dias_falhos += erros
+        dias_falhos.append(erros)
         
     return anos_falhos, dias_totais, dias_falhos
 
