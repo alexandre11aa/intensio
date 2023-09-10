@@ -359,6 +359,8 @@ def precipitacoes_maximas(lista_1, lista_2):
         for j in range(len(lista_1)):
             if lista_2[i][0] == lista_1[j][0]:
                 if (max(lista_2[i][2:len(lista_2[i])]) != 0):
-                    lista_1[j][1] = max(lista_2[i][2:len(lista_2[i])])
+                    if (numpy.isnan(lista_1[j][1]) or 
+                        max(lista_2[i][2:len(lista_2[i])]) > lista_1[j][1]):
+                        lista_1[j][1] = max(lista_2[i][2:len(lista_2[i])])
 
     return lista_1, lista_2
