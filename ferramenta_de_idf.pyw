@@ -273,7 +273,7 @@ class funcoes():
 
     def calculando_2(self):
 
-        self.quadro_4_itens, self.quadro_5_itens = precipitacoes_maximas(self.quadro_4_itens, 
+        self.quadro_4_itens, self.quadro_5_itens = precipitacoes_maximas([], 
                                                                          self.quadro_5_itens)
         (anos_falhos, 
          self.relatorio_2_variaveis[0], 
@@ -1009,6 +1009,7 @@ class funcoes():
         # Adicionando Imagem à Janela na Tela
 
         self.informacoes = tk.PhotoImage(data=imagens_de_ferramenta(img))
+
         self.my_canvas.create_image(1, 1, image=self.informacoes, anchor=tk.NW)
 
     def estudo(self):
