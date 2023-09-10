@@ -146,6 +146,13 @@ def modelagem(precipitacoes_diarias_anuais_e_anos, tempos_de_retorno, probabilid
     for i in range(len(tempos_de_retorno)):
         precipitacoes_iniciais.append(modelo_probabilistico.ppf((1 - 1/tempos_de_retorno[i]), *parametros))
 
+    # Verificando adequação do modelo
+
+    if len(set(precipitacoes_iniciais)) != len(precipitacoes_iniciais):
+        precipitacoes_iniciais = [numpy.nan] * len(precipitacoes_iniciais)
+
+    # Resultados do cálculo
+
     return (precipitacoes_diarias_anuais,
             desvio_padrao, 
             media,
