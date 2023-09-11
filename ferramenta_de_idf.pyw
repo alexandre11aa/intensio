@@ -304,95 +304,151 @@ class funcoes():
             for i in range(len(self.lista_de_funcoes_cumulativas_de_probabilidade)):
                 for j in range(len(self.lista_de_aderencias)):
                     for k in range(len(self.lista_de_otimizacoes)):
-                        testes.append(self.calculando_1(anos_e_precipitacoes, 
-                                                        self.lista_de_funcoes_cumulativas_de_probabilidade[i], 
-                                                        self.lista_de_aderencias[j], 
-                                                        self.lista_de_otimizacoes[k]))
+                        teste = self.calculando_1(anos_e_precipitacoes, 
+                                                  self.lista_de_funcoes_cumulativas_de_probabilidade[i], 
+                                                  self.lista_de_aderencias[j], 
+                                                  self.lista_de_otimizacoes[k])
+                        
+                        if (teste[1] == 'Rejeitar'):
+                            teste.append(np.nan)
 
-            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[8])
+                        else:
+                            teste.append(teste[8])
+                
+                        testes.append(teste)
 
-            dados_calculados = testes_ordenados[0]
+            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[13])
+
+            dados_calculados = testes_ordenados[0][:-1]
 
         # Melhores Modelagem e Aderência
 
         elif self.n_melhor_modelagem == 0 and self.n_melhor_aderencia == 0:
             for i in range(len(self.lista_de_funcoes_cumulativas_de_probabilidade)):
                 for j in range(len(self.lista_de_aderencias)):
-                    testes.append(self.calculando_1(anos_e_precipitacoes, 
-                                                    self.lista_de_funcoes_cumulativas_de_probabilidade[i], 
-                                                    self.lista_de_aderencias[j], 
-                                                    otimizacao_variavel))
+                    teste = self.calculando_1(anos_e_precipitacoes, 
+                                              self.lista_de_funcoes_cumulativas_de_probabilidade[i], 
+                                              self.lista_de_aderencias[j], 
+                                              otimizacao_variavel)
+                    
+                    if (teste[1] == 'Rejeitar'):
+                        teste.append(np.nan)
 
-            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[8])
+                    else:
+                        teste.append(teste[8])
+                
+                    testes.append(teste)
 
-            dados_calculados = testes_ordenados[0]
+            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[13])
+
+            dados_calculados = testes_ordenados[0][:-1]
 
         # Melhores Modelagem e Otimização
 
         elif self.n_melhor_modelagem == 0 and self.n_melhor_otimizacao == 0:
             for i in range(len(self.lista_de_funcoes_cumulativas_de_probabilidade)):
                 for j in range(len(self.lista_de_otimizacoes)):
-                    testes.append(self.calculando_1(anos_e_precipitacoes, 
-                                                    self.lista_de_funcoes_cumulativas_de_probabilidade[i], 
-                                                    aderencia_variavel, 
-                                                    self.lista_de_otimizacoes[j]))
+                    teste = self.calculando_1(anos_e_precipitacoes, 
+                                              self.lista_de_funcoes_cumulativas_de_probabilidade[i], 
+                                              aderencia_variavel, 
+                                              self.lista_de_otimizacoes[j])
+                    
+                    if (teste[1] == 'Rejeitar'):
+                        teste.append(np.nan)
 
-            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[8])
+                    else:
+                        teste.append(teste[8])
+                
+                    testes.append(teste)
 
-            dados_calculados = testes_ordenados[0]
+            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[13])
+
+            dados_calculados = testes_ordenados[0][:-1]
 
         # Melhores Aderência e Otimização
 
         elif self.n_melhor_aderencia == 0 and self.n_melhor_otimizacao == 0:
             for i in range(len(self.lista_de_aderencias)):
                 for j in range(len(self.lista_de_otimizacoes)):
-                    testes.append(self.calculando_1(anos_e_precipitacoes, 
-                                                    modelagem_variavel, 
-                                                    self.lista_de_aderencias[i], 
-                                                    self.lista_de_otimizacoes[j]))
+                    teste = self.calculando_1(anos_e_precipitacoes, 
+                                              modelagem_variavel, 
+                                              self.lista_de_aderencias[i], 
+                                              self.lista_de_otimizacoes[j])
+                    
+                    if (teste[1] == 'Rejeitar'):
+                        teste.append(np.nan)
 
-            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[8])
+                    else:
+                        teste.append(teste[8])
+                
+                    testes.append(teste)
 
-            dados_calculados = testes_ordenados[0]
+            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[13])
+
+            dados_calculados = testes_ordenados[0][:-1]
 
         # Melhor Modelagem
 
         elif self.n_melhor_modelagem == 0:
             for i in range(len(self.lista_de_funcoes_cumulativas_de_probabilidade)):
-                testes.append(self.calculando_1(anos_e_precipitacoes, 
-                                                self.lista_de_funcoes_cumulativas_de_probabilidade[i], 
-                                                aderencia_variavel, 
-                                                otimizacao_variavel))
+                teste = self.calculando_1(anos_e_precipitacoes, 
+                                          self.lista_de_funcoes_cumulativas_de_probabilidade[i], 
+                                          aderencia_variavel, 
+                                          otimizacao_variavel)
+            
+                if (teste[1] == 'Rejeitar'):
+                    teste.append(np.nan)
 
-            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[8])
+                else:
+                    teste.append(teste[8])
+                
+                testes.append(teste)
 
-            dados_calculados = testes_ordenados[0]
+            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[13])
+
+            dados_calculados = testes_ordenados[0][:-1]
 
         # Melhor Aderência
 
         elif self.n_melhor_aderencia == 0:
             for i in range(len(self.lista_de_aderencias)):
-                testes.append(self.calculando_1(anos_e_precipitacoes, 
-                                                modelagem_variavel, 
-                                                self.lista_de_aderencias[i], 
-                                                otimizacao_variavel))
+                teste = self.calculando_1(anos_e_precipitacoes, 
+                                          modelagem_variavel, 
+                                          self.lista_de_aderencias[i], 
+                                          otimizacao_variavel)
+                
+                if (teste[1] == 'Rejeitar'):
+                    teste.append(np.nan)
 
-            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[8])
+                else:
+                    teste.append(teste[8])
+                
+                testes.append(teste)
 
-            dados_calculados = testes_ordenados[0]
+            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[13])
+
+            dados_calculados = testes_ordenados[0][:-1]
 
         # Melhor Otimização
 
         elif self.n_melhor_otimizacao == 0:
             for i in range(len(self.lista_de_otimizacoes)):
-                testes.append(self.calculando_1(anos_e_precipitacoes, 
-                                                modelagem_variavel, 
-                                                aderencia_variavel, 
-                                                self.lista_de_otimizacoes[i]))
+                teste = self.calculando_1(anos_e_precipitacoes, 
+                                          modelagem_variavel, 
+                                          aderencia_variavel, 
+                                          self.lista_de_otimizacoes[i])
+                
+                if (teste[1] == 'Rejeitar'):
+                    teste.append(np.nan)
 
-            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[8])
+                else:
+                    teste.append(teste[8])
+                
+                testes.append(teste)
 
-            dados_calculados = testes_ordenados[0]
+            testes_ordenados = sorted(testes, reverse=True, key=lambda x: x[13])
+
+            dados_calculados = testes_ordenados[0][:-1]
 
         # Escolha do Usuário
 
@@ -401,7 +457,7 @@ class funcoes():
                                                  modelagem_variavel, 
                                                  aderencia_variavel, 
                                                  otimizacao_variavel)
-
+            
         return dados_calculados
 
     # Direcionador de Coordenadas
