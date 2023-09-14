@@ -1717,7 +1717,7 @@ class programa(funcoes):
 
     # Configurações da Tela
     def tela(self):
-        self.root.title("D'Água")
+        self.root.title("Intensio")
         self.root.configure(background='#F0F0F0')
         self.root.geometry('750x500')
         self.root.resizable(False, False)
