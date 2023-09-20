@@ -3,6 +3,9 @@ print("\nPorque para mim o viver é Cristo, e o morrer é ganho. Filipenses 1:21
 import tkinter as tk
 import pandas as pd
 import numpy as np
+
+import subprocess
+import tempfile
 import base64
 import sys
 import os
@@ -13,7 +16,9 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 from dados_da_paraiba import banco_de_dados_total
 from dados_da_paraiba import banco_de_dados_maximos
-from img_da_ferramenta import imagens_de_ferramenta
+
+from arquivos_da_ferramenta import imagens_de_ferramenta
+from arquivos_da_ferramenta import documentos_de_ferramenta
 
 from metodos_de_frequencia import chow_gumbel
 from metodos_de_frequencia import modelagem
@@ -310,7 +315,7 @@ class funcoes():
                                                   self.lista_de_otimizacoes[k])
                         
                         if (teste[1] == 'Rejeitar'):
-                            teste.append(np.nan)
+                            teste.append(0)
 
                         else:
                             teste.append(teste[8])
@@ -332,7 +337,7 @@ class funcoes():
                                               otimizacao_variavel)
                     
                     if (teste[1] == 'Rejeitar'):
-                        teste.append(np.nan)
+                        teste.append(0)
 
                     else:
                         teste.append(teste[8])
@@ -354,7 +359,7 @@ class funcoes():
                                               self.lista_de_otimizacoes[j])
                     
                     if (teste[1] == 'Rejeitar'):
-                        teste.append(np.nan)
+                        teste.append(0)
 
                     else:
                         teste.append(teste[8])
@@ -376,7 +381,7 @@ class funcoes():
                                               self.lista_de_otimizacoes[j])
                     
                     if (teste[1] == 'Rejeitar'):
-                        teste.append(np.nan)
+                        teste.append(0)
 
                     else:
                         teste.append(teste[8])
@@ -397,7 +402,7 @@ class funcoes():
                                           otimizacao_variavel)
             
                 if (teste[1] == 'Rejeitar'):
-                    teste.append(np.nan)
+                    teste.append(0)
 
                 else:
                     teste.append(teste[8])
@@ -418,7 +423,7 @@ class funcoes():
                                           otimizacao_variavel)
                 
                 if (teste[1] == 'Rejeitar'):
-                    teste.append(np.nan)
+                    teste.append(0)
 
                 else:
                     teste.append(teste[8])
@@ -439,7 +444,7 @@ class funcoes():
                                           self.lista_de_otimizacoes[i])
                 
                 if (teste[1] == 'Rejeitar'):
-                    teste.append(np.nan)
+                    teste.append(0)
 
                 else:
                     teste.append(teste[8])
@@ -1026,6 +1031,7 @@ class funcoes():
         barra_de_menu.add_cascade(label='Ajuda', menu = menu_de_ajuda)
         menu_de_ajuda.add_command(label='Estudo', command=self.estudo)
         menu_de_ajuda.add_command(label='Ferramenta', command=self.ferramenta)
+        menu_de_ajuda.add_command(label='Manual', command=self.manual)
         menu_de_ajuda.add_command(label='Siglas', command=self.siglas)
 
     # Opções de Ajuda
@@ -1074,6 +1080,25 @@ class funcoes():
     def ferramenta(self):
         self.ajuda('ferramenta')
 
+    def manual(self):
+
+        # Decodificando o PDF em base64
+        pdf_bytes = base64.b64decode(documentos_de_ferramenta('manual_de_uso'))
+                
+        # Criando o caminho completo para o arquivo temporário
+        temp_file_path = os.path.join(tempfile.gettempdir(), 'Intensio - Manual de Uso.pdf')
+        
+        # Salve o PDF decodificado com o nome escolhido
+        with open(temp_file_path, "wb") as temp_file:
+            temp_file.write(pdf_bytes)
+        
+        # Abrindo o arquivo PDF com o leitor de PDF padrão do sistema
+        try:
+            subprocess.Popen(['start', '', temp_file_path], shell=True)
+            
+        except Exception as e:
+            print(f"Erro ao abrir o arquivo PDF: {e}")
+ 
     def siglas(self):
         self.ajuda('siglas')
 
