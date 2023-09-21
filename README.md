@@ -4,4 +4,8 @@ Todas as bibliotecas usadas para desenvolver o presente trabalho estão contidas
 
 Para baixar o instalador da ferramenta Intensio acesse:
 
-https://drive.google.com/file/d/1kT7rDzqelwLwwbYSDOymJmns2Y6Zlk3g/view
+https://drive.google.com/file/d/1IkApxCR6-j-2dgzLQgXkitvOrcYOiiNe/view
+
+Para baixar o manual de uso da ferramenta Intensio acesse:
+
+https://drive.google.com/file/d/1PPwBZBJ1TYEOZ7MFu0NaLQ48Nyz_1T9o/view
