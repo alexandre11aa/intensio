@@ -9,3 +9,7 @@ https://drive.google.com/file/d/1IkApxCR6-j-2dgzLQgXkitvOrcYOiiNe/view
 Para baixar o manual de uso da ferramenta Intensio acesse:
 
 https://drive.google.com/file/d/1PPwBZBJ1TYEOZ7MFu0NaLQ48Nyz_1T9o/view
+
+Para ler o artigo científico desenvolvido para a ferramenta acesse:
+
+https://coopex.unifip.edu.br/index.php/coopex/article/view/550
