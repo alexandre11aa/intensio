@@ -10,7 +10,7 @@ https://drive.google.com/file/d/1IkApxCR6-j-2dgzLQgXkitvOrcYOiiNe/view
 
 Para baixar o manual de uso da ferramenta Intensio acesse:
 
-https://drive.google.com/file/d/1PPwBZBJ1TYEOZ7MFu0NaLQ48Nyz_1T9o/view
+https://drive.google.com/file/d/13d4H1FsTQ_nRmmNXv0ytU7gUgkqNRu21/view
 
 Para ler o artigo científico desenvolvido para a ferramenta acesse:
 
