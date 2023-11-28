@@ -12,6 +12,10 @@ Para baixar o manual de uso da ferramenta Intensio acesse:
 
 https://drive.google.com/file/d/13d4H1FsTQ_nRmmNXv0ytU7gUgkqNRu21/view
 
+Para ler o trabalho de conclusão de curso que embasou a ferramenta acesse:
+
+https://drive.google.com/file/d/14G35lIxiNABUQs4JBwtvptLR3Tct31K4/view
+
 Para ler o artigo científico desenvolvido para a ferramenta acesse:
 
 https://coopex.unifip.edu.br/index.php/coopex/article/view/550
