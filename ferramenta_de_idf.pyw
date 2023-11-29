@@ -625,15 +625,28 @@ class funcoes():
 
     # Botões de Inserir
     def inserindo_1(self):
-        if str(self.digitar_numero.get()) != "":
-            self.quadro_1_itens.append([float(self.digitar_numero.get()),
-                                        float(self.digitar_precipitacao.get())])
 
-        if str(self.lista_de_insercao_1.get()) != "":
-            lista_excel = np.asarray(pd.read_excel(str(self.lista_de_insercao_1.get()), index_col=None, header=None))
+        try:
+            if str(self.digitar_numero.get()) != "":
+                self.quadro_1_itens.append([float(self.digitar_numero.get()),
+                                            float(self.digitar_precipitacao.get())])
 
-            for i in range(len(lista_excel)):
-                self.quadro_1_itens.append(lista_excel[i])
+            if str(self.lista_de_insercao_1.get()) != "":
+                try:
+                    lista_excel = np.asarray(pd.read_excel(str(self.lista_de_insercao_1.get()), index_col=None, header=None))
+                
+                except:
+                    try:
+                        lista_excel = np.asarray(pd.read_csv(str(self.lista_de_insercao_1.get()), index_col=None, header=None))
+
+                    except:
+                        pass
+
+                for i in range(len(lista_excel)):
+                    self.quadro_1_itens.append(lista_excel[i])
+        
+        except:
+            pass
 
         self.funcao_destruicao_2()
 
@@ -657,37 +670,49 @@ class funcoes():
         self.funcao_destruicao_2()
 
     def inserindo_4(self):
-        if str(self.anos_1.get()) != "":
+        
+        try:
+            if str(self.anos_1.get()) != "":
 
-            lista = [self.anos_1.get(), self.meses_1.get(), self.dia_1.get(), 
-                     self.dia_2.get(),   self.dia_3.get(),  self.dia_4.get(), 
-                     self.dia_5.get(),   self.dia_6.get(),  self.dia_7.get(), 
-                     self.dia_8.get(),  self.dia_19.get(), self.dia_10.get(), 
-                     self.dia_11.get(), self.dia_12.get(), self.dia_13.get(), 
-                     self.dia_14.get(), self.dia_15.get(), self.dia_16.get(), 
-                     self.dia_17.get(), self.dia_18.get(), self.dia_19.get(),
-                     self.dia_20.get(), self.dia_21.get(), self.dia_22.get(), 
-                     self.dia_23.get(), self.dia_24.get(), self.dia_25.get(), 
-                     self.dia_26.get(), self.dia_27.get(), self.dia_28.get(), 
-                     self.dia_29.get(), self.dia_30.get(), self.dia_31.get()]
-            
-            flutuante = []
-            
-            for i in range(len(lista)):
-                if lista[i] == '':
-                    flutuante.append(np.nan)
+                lista = [self.anos_1.get(), self.meses_1.get(), self.dia_1.get(), 
+                        self.dia_2.get(),   self.dia_3.get(),  self.dia_4.get(), 
+                        self.dia_5.get(),   self.dia_6.get(),  self.dia_7.get(), 
+                        self.dia_8.get(),  self.dia_19.get(), self.dia_10.get(), 
+                        self.dia_11.get(), self.dia_12.get(), self.dia_13.get(), 
+                        self.dia_14.get(), self.dia_15.get(), self.dia_16.get(), 
+                        self.dia_17.get(), self.dia_18.get(), self.dia_19.get(),
+                        self.dia_20.get(), self.dia_21.get(), self.dia_22.get(), 
+                        self.dia_23.get(), self.dia_24.get(), self.dia_25.get(), 
+                        self.dia_26.get(), self.dia_27.get(), self.dia_28.get(), 
+                        self.dia_29.get(), self.dia_30.get(), self.dia_31.get()]
+                
+                flutuante = []
+                
+                for i in range(len(lista)):
+                    if lista[i] == '':
+                        flutuante.append(np.nan)
 
-                else:
-                    flutuante.append(float(lista[i]))
+                    else:
+                        flutuante.append(float(lista[i]))
 
-            self.quadro_5_itens.append(flutuante)
+                self.quadro_5_itens.append(flutuante)
 
-        if str(self.lista_de_insercao_2.get()) != "":
+            if str(self.lista_de_insercao_2.get()) != "":
+                try:
+                    lista_excel = np.asarray(pd.read_excel(str(self.lista_de_insercao_2.get()), index_col=None, header=None))
+                
+                except:
+                    try:
+                        lista_excel = np.asarray(pd.read_csv(str(self.lista_de_insercao_2.get()), index_col=None, header=None))
 
-            lista_excel = np.asarray(pd.read_excel(str(self.lista_de_insercao_2.get()), index_col=None, header=None))
+                    except:
+                        pass
 
-            for i in range(len(lista_excel)):
-                self.quadro_5_itens.append(lista_excel[i])
+                for i in range(len(lista_excel)):
+                    self.quadro_5_itens.append(lista_excel[i])
+
+        except:
+            pass
 
         self.funcao_destruicao_3()
 
