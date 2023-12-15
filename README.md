@@ -14,7 +14,7 @@ https://drive.google.com/file/d/13d4H1FsTQ_nRmmNXv0ytU7gUgkqNRu21/view
 
 Para ler o trabalho que embasou a ferramenta acesse:
 
-https://drive.google.com/file/d/14G35lIxiNABUQs4JBwtvptLR3Tct31K4/view
+https://doi.org/10.13140/RG.2.2.13718.73286
 
 Para ler o artigo científico da ferramenta acesse:
 
