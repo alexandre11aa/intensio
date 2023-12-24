@@ -663,7 +663,7 @@ class funcoes():
         elif self.n_coeficientes_de_desagregacao == 1:
             self.n_duracao_de_coeficientes = self.duracao_de_coeficientes.current()
 
-            self.coeficientes_de_duracoes[self.n_duracao_de_coeficientes] = self.digitar_duracao.get()
+            self.coeficientes_de_duracoes[self.n_duracao_de_coeficientes] = float(self.digitar_duracao.get())
 
         self.funcao_destruicao_2()
 
