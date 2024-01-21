@@ -2,7 +2,7 @@
 
 Ferramenta computacional para determinação de equações de chuvas intensas com fins de uso e estudo. Todo o código usado em sua elaboração está contido neste repositório e disponível para uso de acordo com a licensa. 
 
-Todas as bibliotecas usadas para desenvolver o presente trabalho estão contidas no início de cada código que compõe a ferramenta computacional. Caso deseje executar o código fonte, elas devem estar devidamente instaladas. É possível baixar e instala-las através da ferramenta para gerenciamento de pacotes de software escrito em Python, PIP3. Por fim basta baixar todos os arquivos deste repositório, mantê-los na mesma pasta, e executar o *ferramenta_de_idf.pyw* em algum IDLE compatível.
+# Anexos
 
 Para baixar o instalador da ferramenta acesse:
 
@@ -19,3 +19,15 @@ https://doi.org/10.13140/RG.2.2.13718.73286
 Para ler o artigo científico da ferramenta acesse:
 
 https://coopex.unifip.edu.br/index.php/coopex/article/view/550
+
+# Requirements
+
+numpy           1.26.3  
+pandas          2.2.0  
+pip             23.2.1  
+pymannkendall   1.4.3  
+python-dateutil 2.8.2  
+pytz            2023.3.post1  
+scipy           1.12.0  
+six             1.16.0  
+tzdata          2023.4  
