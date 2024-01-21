@@ -22,6 +22,8 @@ https://coopex.unifip.edu.br/index.php/coopex/article/view/550
 
 # Requirements
 
+Python 3.12.1
+
 numpy           1.26.3  
 pandas          2.2.0  
 pip             23.2.1  
