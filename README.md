@@ -33,3 +33,5 @@ pytz            2023.3.post1
 scipy           1.12.0  
 six             1.16.0  
 tzdata          2023.4  
+
+Sistema operacional: Windwos
