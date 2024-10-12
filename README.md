@@ -1,6 +1,6 @@
 # Intensio
 
-Ferramenta computacional para determinação de equações de chuvas intensas com fins de uso e estudo. Todo o código usado em sua elaboração está contido neste repositório e disponível para uso de acordo com a licensa. 
+Ferramenta computacional para determinação de equações de chuvas intensas com fins de uso e estudo. Todo o código usado em sua elaboração está contido neste repositório e disponível para uso de acordo com a licença. 
 
 # Anexos
 
