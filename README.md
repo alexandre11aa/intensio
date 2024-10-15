@@ -20,10 +20,14 @@ Para ler o artigo científico da ferramenta acesse:
 
 https://coopex.unifip.edu.br/index.php/coopex/article/view/550
 
-# Requirements
+# Requeriments
 
-Python 3.12.1
-
+* Python 3.12.1
+* OS: Windows
+  
+```shell
+Package         Version
+--------------- ------------
 numpy           1.26.3  
 pandas          2.2.0  
 pip             23.2.1  
@@ -32,6 +36,5 @@ python-dateutil 2.8.2
 pytz            2023.3.post1  
 scipy           1.12.0  
 six             1.16.0  
-tzdata          2023.4  
-
-Sistema operacional: Windows
+tzdata          2023.4 
+```
