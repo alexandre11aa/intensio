@@ -18,7 +18,7 @@ https://doi.org/10.13140/RG.2.2.13718.73286
 
 Para ler o artigo científico da ferramenta acesse:
 
-https://coopex.unifip.edu.br/index.php/coopex/article/view/550
+https://editora.unifip.edu.br/index.php/coopex/article/view/550
 
 # Requeriments
 
